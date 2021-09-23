@@ -1,0 +1,25 @@
+{% extends "infoscreen/base.html" %}
+
+{% block title %}
+{{ screen.name }}
+{% endblock %}
+
+{% block head %}
+    <style>
+    .screen-img {
+        object-fit: cover;
+        
+    }
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="body-inner">
+    
+    <div class="vw-100 vh-100 border border-dark">
+        <img class="screen-img h-100 w-100" src="{{ screen.images.first.url }}" alt="{{ screen.images.first.name }}">
+    </div>
+    
+</div>
+{% endblock %}
+
