@@ -7,9 +7,9 @@ from root import models as root_models
 class ScreenAdmin(root_models.CustomBaseAdmin):
     list_display = ['name']
     ordering = []
-    # list_filter = []
+    list_filter = ['images']
     filter_horizontal = ['images']
-    search_fields = ['name']
+    search_fields = ['name', 'slug']
     
     
 class ScreenHasImageAdmin(admin.ModelAdmin):

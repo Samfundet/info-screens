@@ -10,6 +10,9 @@
     height: 100vh !important;
 }
 
+.object-fit-cover {
+    object-fit: cover !important;
+}
 
 .row, [class^="col"] {
     margin: 0;

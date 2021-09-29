@@ -8,10 +8,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <!-- Other stylesheets -->
-    {% compress css %}
-    <link rel="stylesheet" type="text/x-scss" href="{% static "infoscreen/scss/base.scss" %}">
-    {% endcompress %}
     
     <!-- JQuery first (3.5.0 breaks the site), then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
@@ -38,6 +34,11 @@
     <!-- Plugin for calendar date-picker -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.3/flatpickr.css" integrity="sha256-7vIWE+OHz3pLhuONuFqSa/Oh/YUUHFIMooHMwN1Q2bk=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.3/themes/dark.css" integrity="sha256-K7VO/dYboZOIjm2us6WE3Z8P8lsfUKaUVSnYYtPg6eE=" crossorigin="anonymous" />
+    
+    <!-- Other stylesheets -->
+    {% compress css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static "infoscreen/scss/base.scss" %}">
+    {% endcompress %}
     
     <!-- Title -->
     <title>{% block title %}Base{% endblock %}</title>

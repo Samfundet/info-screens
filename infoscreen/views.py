@@ -9,6 +9,7 @@ class Index(View):
     def get(self, request):
         return render(request, self.template)
         
+        
 class ScreenView(View):
     template = 'infoscreen/screen.html'
     
@@ -16,4 +17,14 @@ class ScreenView(View):
         screen = get_object_or_404(infoscreen_models.Screen, slug=slug)
         return render(request, self.template, {
             'screen': screen,
+        })
+
+
+class ScreenListView(View):
+    template = 'infoscreen/screen_list.html'
+    
+    def get(self, request):
+        screens = infoscreen_models.Screen.objects.all()
+        return render(request, self.template, {
+            'screens': screens,
         })

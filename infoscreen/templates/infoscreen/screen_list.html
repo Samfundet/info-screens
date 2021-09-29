@@ -1,0 +1,22 @@
+{% extends "infoscreen/base.html" %}
+{% load infoscreen_tags %}
+
+{% block title %}Screens{% endblock %}
+
+{% block head %}
+    <style>
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="body-inner">
+    
+    <div class="">
+        {% for screen in screens %}
+            {% screen_component screen=screen %}
+        {% endfor %}
+    </div>
+    
+</div>
+{% endblock %}
+

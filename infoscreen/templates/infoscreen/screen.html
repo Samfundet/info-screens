@@ -6,10 +6,6 @@
 
 {% block head %}
     <style>
-    .screen-img {
-        object-fit: cover;
-        
-    }
     </style>
 {% endblock %}
 
@@ -17,7 +13,7 @@
 <div class="body-inner">
     
     <div class="vw-100 vh-100 border border-dark">
-        <img class="screen-img h-100 w-100" src="{{ screen.images.first.url }}" alt="{{ screen.images.first.name }}">
+        <img class="h-100 w-100 object-fit-cover" src="{{ screen.images.first.url }}" alt="{{ screen.images.first.name }}">
     </div>
     
 </div>
