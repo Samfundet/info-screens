@@ -7,7 +7,7 @@ ALLOWED_HOSTS = ['info-screens.herokuapp.com']
 
 # Values are set in heroku dashboard
 SECRET_KEY = os.environ['SECRET_KEY']
-DEBUG = os.environ['DEBUG']
+DEBUG = eval(os.environ['DEBUG'])
 
 # Ensure correct ENV
 ENV = Environment.HEROKU

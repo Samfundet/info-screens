@@ -4,7 +4,7 @@ import os
 ALLOWED_HOSTS = []
 
 SECRET_KEY = os.environ['SECRET_KEY']
-DEBUG = os.environ.get('DEBUG', False)
+DEBUG = eval(os.environ.get('DEBUG', 'False'))
 
 # Ensure correct ENV
 ENV = Environment.PROD
