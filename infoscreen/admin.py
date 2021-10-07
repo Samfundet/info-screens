@@ -7,8 +7,8 @@ from root import models as root_models
 class ScreenAdmin(root_models.CustomBaseAdmin):
     list_display = ['name']
     ordering = []
-    list_filter = ['images']
-    filter_horizontal = ['images']
+    list_filter = ['images', 'videos']
+    filter_horizontal = ['images','videos']
     search_fields = ['name', 'slug']
     
     
@@ -28,6 +28,16 @@ class ImageAdmin(root_models.CustomBaseAdmin):
     search_fields = ['name']
 
 
+class VideoAdmin(root_models.CustomBaseAdmin):
+    list_display = ['name', 'youtube_code']
+    ordering = ['name']
+    # list_filter = []
+    # filter_horizontal = []
+    search_fields = ['name']
+
+
+
 admin.site.register(infoscreen_models.Screen, ScreenAdmin)
 # admin.site.register(infoscreen_models.ScreenHasImage, ScreenHasImageAdmin)
 admin.site.register(infoscreen_models.Image, ImageAdmin)
+admin.site.register(infoscreen_models.Video, VideoAdmin)

@@ -8,7 +8,8 @@ class Screen(root_models.CustomBaseModel):
     
     # images = models.ManyToManyField('Image', through='ScreenHasImage')
     images = models.ManyToManyField('infoscreen.Image', blank=True)
-    
+    videos = models.ManyToManyField('infoscreen.Video', blank=True)
+
     def __str__(self):
         return f"{self.name}"
     
