@@ -1,0 +1,8 @@
+.*
+venv/
+docs/
+staticroot/
+node_modules/
+migrations/
+static/
+templates/

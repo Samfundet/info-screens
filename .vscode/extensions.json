@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "fnando.linter",
+    "orta.vscode-jest",
+    "ms-python.python",
+    "dbaeumer.vscode-eslint",
+    "batisteo.vscode-django",
+    "ms-python.vscode-pylance",
+    "editorconfig.editorconfig",
+    "visualstudioexptteam.vscodeintellicode",
+  ]
+}
