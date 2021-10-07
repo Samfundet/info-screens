@@ -14,6 +14,7 @@ from django.template.defaultfilters import filesizeformat
 
 # https://github.com/django/django/blob/master/django/forms/models.py
 class CustomModelForm(forms.ModelForm):
+    """ U"""
 
     def save(self, commit=True, *args, **kwargs):
         """
@@ -44,11 +45,13 @@ class CustomModelForm(forms.ModelForm):
 
 
 class CustomBaseAdmin(admin.ModelAdmin):
-    readonly_fields = ['creator', 'created', 'last_edited', 'last_editor']
-    # list_display = []
+    """ Use if model inherits from CustomBaseModel """
+    
+    readonly_fields = ['creator', 'created', 'last_edited', 'last_editor'] # Makes the field not editable in admin-panel
+    # list_display = [] # columns on front-page of model in admin-page
     # ordering = []
     # list_filter = []
-    # filter_horizontal = []
+    # filter_horizontal = [] # horizontal ManyToManyWidget 
     # search_fields = []
 
     def save_model(self, request, obj, form, change):
@@ -65,6 +68,12 @@ class CustomBaseAdmin(admin.ModelAdmin):
 
 
 class CustomBaseModel(models.Model):
+    """ 
+    Use instead of models.Model if needed 
+    
+    Provides functionality to log modifications
+    """
+    
     last_editor = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, editable=False, related_name="editor_%(class)s_set", verbose_name="Sist redigert av")
     last_edited = models.DateTimeField(null=True, blank=True, editable=False, verbose_name="Sist redigert")
     creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, editable=False, related_name="creator_%(class)s_set", verbose_name="Opprettet av")
@@ -74,13 +83,18 @@ class CustomBaseModel(models.Model):
         abstract = True
 
     def is_edited(self):
-        return (self.created != self.last_edited)
+        return self.created != self.last_edited
     
     def clean(self, *args, **kwargs):
-        pass
+        """ 
+        Called by full_clean.
+        
+        Clean instance state (not directly related to any fields).
+        """
+        raise NotImplementedError()
 
     def save(self, *args, **kwargs):
-        self.clean()
+        self.full_clean()
         user = kwargs.pop('user', None) # Must pop because super().save() doesn't accept user
         if isinstance(user, auth_models.AnonymousUser): 
             user = None # creator and last_editor can't be AnonymousUser
