@@ -1,4 +1,6 @@
 {% extends "infoscreen/base.html" %}
+{%load static %}
+<link rel="stylesheet" type="text/scss" href="{% static 'infoscreen/video.scss' %}"
 
 {% block title %}
 {{ screen.name }}
@@ -16,9 +18,9 @@
             <img class="h-100 w-100 object-fit-cover" src="{{ screen.images.first.url }}" alt="{{ screen.images.first.name }}">
         </div>
     {% else %}
-            <div>
-                <iframe width="100%" height="720px" allowfullscreen frameBorder="0" src="https://www.youtube.com/embed/{{screen.videos.first.youtube_code}}?autoplay=1&playlist={{screen.videos.first.youtube_code}}&loop=1&controls=0" />
-
+            <div class="youtube-video">
+                <h1 class="hoi"> Hoi </h1>
+                <iframe frameBorder="0" src="https://www.youtube.com/embed/{{screen.videos.first.youtube_code}}?autoplay=1&playlist={{screen.videos.first.youtube_code}}&loop=1&controls=0" />
             </div>
     {% endif %}
     
