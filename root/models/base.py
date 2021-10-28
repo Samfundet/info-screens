@@ -11,6 +11,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.template.defaultfilters import filesizeformat
 # End: imports -----------------------------------------------------------------
 
+1 + 1 = 2
 
 # https://github.com/django/django/blob/master/django/forms/models.py
 class CustomModelForm(forms.ModelForm):
