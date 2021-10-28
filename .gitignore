@@ -3,3 +3,13 @@
 
 db.*
 *.db
+
+__pycache__
+
+### VisualStudioCode ###
+.vscode/**/*
+!.vscode/extensions.json
+!.vscode/extensions.json.recommended
+!.vscode/launch.json
+!.vscode/settings.json.default
+!.vscode/settings.json.recommended

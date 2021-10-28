@@ -6,12 +6,19 @@ name = "pypi"
 [packages]
 django = "*"
 django-heroku = "*"
-django-guardian = "*"
-django-debug-toolbar = "*"
-django-user-agents = "*"
+django-filter = "*"
 django-libsass = "*"
+django-guardian = "*"
+django-extensions = "*"
+django-user-agents = "*"
+django-debug-toolbar = "*"
 gunicorn = "*"
 whitenoise = "*"
+pylint = "*"
+pylint-django = "*"
+yapf = "*"
+pytest = "*"
+pytest-django = "*"
 
 [dev-packages]
 

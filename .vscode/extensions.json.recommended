@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "eamodio.gitlens",
+    "orta.vscode-jest",
+    "mikestead.dotenv",
+    "mrorz.language-gettext",
+    "esbenp.prettier-vscode",
+    "yzhang.markdown-all-in-one"
+  ]
+}
