@@ -1,12 +1,17 @@
 {% extends "infoscreen/base.html" %}
 {%load static %}
-<link rel="stylesheet" type="text/scss" href="{% static 'infoscreen/video.scss' %}"
 
 {% block title %}
 {{ screen.name }}
 {% endblock %}
 
 {% block head %}
+{% load compress %}
+
+{% compress css %}
+<link rel="stylesheet" type="text/x-scss" href="{% static "infoscreen/scss/video.scss" %}">
+{% endcompress %}
+
     <style>
     </style>
 {% endblock %}
@@ -19,11 +24,10 @@
         </div>
     {% else %}
             <div class="youtube-video">
-                <h1 class="hoi"> Hoi </h1>
                 <iframe frameBorder="0" src="https://www.youtube.com/embed/{{screen.videos.first.youtube_code}}?autoplay=1&playlist={{screen.videos.first.youtube_code}}&loop=1&controls=0" />
             </div>
     {% endif %}
-    
+
 </div>
 {% endblock %}
 
