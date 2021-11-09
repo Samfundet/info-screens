@@ -1,7 +1,8 @@
-from .base import *
-
+# pylint: disable=unused-wildcard-import
 import os
 
+from ..constants import Environment
+from .base import *  # pylint: disable=wildcard-import
 
 ALLOWED_HOSTS = ['*']
 
@@ -19,4 +20,3 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-

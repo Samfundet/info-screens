@@ -4,6 +4,10 @@ ignore=migrations,node_modules,venv,.venv,frontend,staticroot,scripts
 max-line-length=200
 include-naming-hint=y
 django-settings-module=root.settings
+variable-rgx=(([a-z_]+[a-z0-9_]*)|(_[a-z0-9_]*)|(__[a-z][a-z0-9_]+__))$
+argument-rgx=(([a-z_]+[a-z0-9_]*)|(_[a-z0-9_]*)|(__[a-z][a-z0-9_]+__))$
+method-rgx=(([a-z_]+[a-z0-9_]*)|(_[a-z0-9_]*)|(__[a-z][a-z0-9_]+__))$
+attr-rgx=(([a-z_]+[a-z0-9_]*)|(_[a-z0-9_]*)|(__[a-z][a-z0-9_]+__))$
 
 [MESSAGES CONTROL]
 
