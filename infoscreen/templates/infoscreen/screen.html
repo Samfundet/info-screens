@@ -1,21 +1,33 @@
 {% extends "infoscreen/base.html" %}
+{%load static %}
 
 {% block title %}
 {{ screen.name }}
 {% endblock %}
 
 {% block head %}
+{% load compress %}
+
+{% compress css %}
+<link rel="stylesheet" type="text/x-scss" href="{% static "infoscreen/scss/video.scss" %}">
+{% endcompress %}
+
     <style>
     </style>
 {% endblock %}
 
 {% block body %}
 <div class="body-inner">
-    
-    <div class="vw-100 vh-100 border border-dark">
-        <img class="h-100 w-100 object-fit-cover" src="{{ screen.images.first.url }}" alt="{{ screen.images.first.name }}">
-    </div>
-    
+    {% if screen.images.first %}
+        <div class="vw-100 vh-100 border border-dark">
+            <img class="h-100 w-100 object-fit-cover" src="{{ screen.images.first.url }}" alt="{{ screen.images.first.name }}">
+        </div>
+    {% else %}
+            <div class="youtube-video">
+                <iframe frameBorder="0" src="https://www.youtube.com/embed/{{screen.videos.first.youtube_code}}?autoplay=1&playlist={{screen.videos.first.youtube_code}}&loop=1&controls=0" />
+            </div>
+    {% endif %}
+
 </div>
 {% endblock %}
 
