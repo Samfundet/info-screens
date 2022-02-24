@@ -3,7 +3,7 @@ from root.constants import Environment
 
 ENV = os.environ.get('ENV')
 
-# raise exception if ENV is invalid (and show possible options)
+# Raise exception if ENV is invalid (and show possible options).
 if ENV not in Environment.VALID:
     ENV_OPTIONS = ''.join([f'\n\t{env}' for env in Environment.VALID])
     raise Exception(f"""
