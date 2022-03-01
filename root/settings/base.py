@@ -137,3 +137,40 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+################## LOGGING ##################
+
+import logging.config
+
+LOGFILENAME = f"{BASE_DIR}/infoScreens.log"
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'file': {
+            'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'formatter': 'file',
+            'filename': LOGFILENAME,
+        },
+    },
+    'loggers': {
+        'root': {
+            'level': 'INFO',
+            'handlers': ['file'],
+        },
+        'django': {
+            'level': 'INFO',
+            'handlers': ['file'],
+            'propagate': True,
+        },
+    },
+}
+
+logging.config.dictConfig(LOGGING)
