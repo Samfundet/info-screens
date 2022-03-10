@@ -1,5 +1,7 @@
 {% extends "infoscreen/base.html" %}
 {% load infoscreen_tags %}
+{% load static %}
+
 
 {% block title %}Screens{% endblock %}
 
@@ -10,13 +12,24 @@
 
 {% block body %}
 <div class="body-inner">
-    
-    <div class="">
+
+    <div class="container">
+        <div class="row mb-3">
         {% for screen in screens %}
-            {% screen_component screen=screen %}
+            {% comment %} {% screen_component screen=screen %} {% endcomment %}
+                {% if screen.images.first %}
+                <div class="col-4 themed-grid-col">
+                    <img src= "{{ screen.images.first.url }}" class="img-fluid mb-2"/>
+                </div>
+                {% else %}
+                    <div class="col-4 themed-grid-col">
+                        <img class="img-fluid mb-2" src='{% static "infoscreen/img/default.jpg" %}'/>
+                    </div>
+
+                {% endif %}
+            {% comment %} {% endblock %} {% endcomment %}
         {% endfor %}
+        </div>
     </div>
-    
-</div>
 {% endblock %}
 
