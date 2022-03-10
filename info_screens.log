@@ -1463,3 +1463,8 @@ django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 30: 'e
 2022-03-10 19:41:40,198 django.server ERROR    "GET /screens/ HTTP/1.1" 500 203077
 2022-03-10 19:42:05,318 django.server INFO     "GET /screens/ HTTP/1.1" 200 18487
 2022-03-10 19:42:05,337 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 19:47:32,628 django.server INFO     "GET /screens/ HTTP/1.1" 200 18487
+2022-03-10 19:47:32,643 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 19:47:32,657 django.server INFO     "GET /static/infoscreen/img/default.jpg HTTP/1.1" 304 0
+2022-03-10 19:53:17,011 django.server INFO     "GET /screens/ HTTP/1.1" 200 18487
+2022-03-10 19:53:17,028 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
