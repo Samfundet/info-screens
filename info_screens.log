@@ -1468,3 +1468,191 @@ django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 30: 'e
 2022-03-10 19:47:32,657 django.server INFO     "GET /static/infoscreen/img/default.jpg HTTP/1.1" 304 0
 2022-03-10 19:53:17,011 django.server INFO     "GET /screens/ HTTP/1.1" 200 18487
 2022-03-10 19:53:17,028 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 19:55:05,539 django.server INFO     "GET /screens/ HTTP/1.1" 200 18435
+2022-03-10 19:55:05,555 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 19:55:05,562 django.server INFO     "GET /static/infoscreen/img/default.jpg HTTP/1.1" 304 0
+2022-03-10 19:55:20,337 django.server INFO     "GET /admin/infoscreen/screen/ HTTP/1.1" 200 18052
+2022-03-10 19:55:20,381 django.server INFO     "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+2022-03-10 19:55:22,958 django.server INFO     "GET /admin/infoscreen/screen/add/ HTTP/1.1" 200 20323
+2022-03-10 19:55:23,004 django.server INFO     "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+2022-03-10 19:55:33,698 django.server INFO     "POST /admin/infoscreen/screen/add/ HTTP/1.1" 302 0
+2022-03-10 19:55:33,793 django.server INFO     "GET /admin/infoscreen/screen/ HTTP/1.1" 200 18463
+2022-03-10 19:55:33,836 django.server INFO     "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+2022-03-10 19:55:35,741 django.server INFO     "GET /admin/infoscreen/screen/add/ HTTP/1.1" 200 20323
+2022-03-10 19:55:35,783 django.server INFO     "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+2022-03-10 19:55:54,481 django.server INFO     "POST /admin/infoscreen/screen/add/ HTTP/1.1" 302 0
+2022-03-10 19:55:54,628 django.server INFO     "GET /admin/infoscreen/screen/ HTTP/1.1" 200 18673
+2022-03-10 19:55:54,685 django.server INFO     "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+2022-03-10 19:55:57,374 django.server INFO     "GET /admin/infoscreen/screen/add/ HTTP/1.1" 200 20323
+2022-03-10 19:55:57,420 django.server INFO     "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+2022-03-10 19:56:04,363 django.server INFO     "POST /admin/infoscreen/screen/add/ HTTP/1.1" 302 0
+2022-03-10 19:56:04,459 django.server INFO     "GET /admin/infoscreen/screen/ HTTP/1.1" 200 18879
+2022-03-10 19:56:04,511 django.server INFO     "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+2022-03-10 19:56:07,669 django.server INFO     "GET /screens/ HTTP/1.1" 200 19143
+2022-03-10 19:56:07,684 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 19:57:16,433 django.server INFO     "GET /screens/ HTTP/1.1" 200 19234
+2022-03-10 19:57:16,450 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 19:57:17,664 django.server INFO     "GET /screens/ HTTP/1.1" 200 19234
+2022-03-10 19:57:17,676 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 19:57:18,761 django.server INFO     "GET /screens/ HTTP/1.1" 200 19234
+2022-03-10 19:57:18,773 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 19:57:45,565 django.server INFO     "GET /screens/ HTTP/1.1" 200 19144
+2022-03-10 19:57:45,578 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:00:10,164 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 304 0
+2022-03-10 20:03:41,308 django.request ERROR    Internal Server Error: /screens/
+Traceback (most recent call last):
+  File "/home/sindre/Dokumenter/MG/info-screens/.venv/lib/python3.7/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'endblock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sindre/Dokumenter/MG/info-screens/.venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/sindre/Dokumenter/MG/info-screens/.venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sindre/Dokumenter/MG/info-screens/.venv/lib/python3.7/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/sindre/Dokumenter/MG/info-screens/.venv/lib/python3.7/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/sindre/Dokumenter/MG/info-screens/infoscreen/views.py", line 30, in get
+    'screens': screens,
+  File "/home/sindre/Dokumenter/MG/info-screens/.venv/lib/python3.7/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/sindre/Dokumenter/MG/info-screens/.venv/lib/python3.7/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/sindre/Dokumenter/MG/info-screens/.venv/lib/python3.7/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/sindre/Dokumenter/MG/info-screens/.venv/lib/python3.7/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/sindre/Dokumenter/MG/info-screens/.venv/lib/python3.7/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/sindre/Dokumenter/MG/info-screens/.venv/lib/python3.7/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/sindre/Dokumenter/MG/info-screens/.venv/lib/python3.7/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/home/sindre/Dokumenter/MG/info-screens/.venv/lib/python3.7/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/sindre/Dokumenter/MG/info-screens/.venv/lib/python3.7/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/sindre/Dokumenter/MG/info-screens/.venv/lib/python3.7/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/sindre/Dokumenter/MG/info-screens/.venv/lib/python3.7/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/sindre/Dokumenter/MG/info-screens/.venv/lib/python3.7/site-packages/django/template/loader_tags.py", line 278, in do_extends
+    nodelist = parser.parse()
+  File "/home/sindre/Dokumenter/MG/info-screens/.venv/lib/python3.7/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/sindre/Dokumenter/MG/info-screens/.venv/lib/python3.7/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/sindre/Dokumenter/MG/info-screens/.venv/lib/python3.7/site-packages/django/template/loader_tags.py", line 216, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/sindre/Dokumenter/MG/info-screens/.venv/lib/python3.7/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/sindre/Dokumenter/MG/info-screens/.venv/lib/python3.7/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/sindre/Dokumenter/MG/info-screens/.venv/lib/python3.7/site-packages/django/template/defaulttags.py", line 982, in do_if
+    nodelist = parser.parse(('endif',))
+  File "/home/sindre/Dokumenter/MG/info-screens/.venv/lib/python3.7/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/sindre/Dokumenter/MG/info-screens/.venv/lib/python3.7/site-packages/django/template/base.py", line 528, in invalid_block_tag
+    get_text_list(["'%s'" % p for p in parse_until], 'or'),
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 37: 'endblock', expected 'endif'. Did you forget to register or load this tag?
+2022-03-10 20:03:41,350 django.server ERROR    "GET /screens/ HTTP/1.1" 500 202146
+2022-03-10 20:03:56,586 django.server INFO     "GET /screens/ HTTP/1.1" 200 19166
+2022-03-10 20:03:56,604 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:03:56,635 django.server INFO     "GET /static/infoscreen/img/default.jpg HTTP/1.1" 304 0
+2022-03-10 20:35:42,187 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 304 0
+2022-03-10 20:35:42,202 django.server INFO     "GET /static/infoscreen/img/default.jpg HTTP/1.1" 304 0
+2022-03-10 20:42:31,825 django.server INFO     "GET /screens/ HTTP/1.1" 200 19374
+2022-03-10 20:42:31,840 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:43:09,736 django.server INFO     "GET /screens/ HTTP/1.1" 200 19374
+2022-03-10 20:43:09,752 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:44:09,460 django.server INFO     "GET /screens/ HTTP/1.1" 200 19408
+2022-03-10 20:44:09,476 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:45:55,399 django.server INFO     "GET /screens/ HTTP/1.1" 200 19786
+2022-03-10 20:45:55,413 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:45:57,162 django.request WARNING  Not Found: /screen/
+2022-03-10 20:45:57,162 django.server WARNING  "GET /screen/ HTTP/1.1" 404 12805
+2022-03-10 20:46:57,729 django.request WARNING  Not Found: /screen/
+2022-03-10 20:46:57,729 django.server WARNING  "GET /screen/ HTTP/1.1" 404 12805
+2022-03-10 20:46:58,685 django.request WARNING  Not Found: /screen/
+2022-03-10 20:46:58,685 django.server WARNING  "GET /screen/ HTTP/1.1" 404 12805
+2022-03-10 20:46:59,170 django.request WARNING  Not Found: /screen/
+2022-03-10 20:46:59,171 django.server WARNING  "GET /screen/ HTTP/1.1" 404 12805
+2022-03-10 20:47:09,490 django.request WARNING  Not Found: /screen/
+2022-03-10 20:47:09,491 django.server WARNING  "GET /screen/ HTTP/1.1" 404 12805
+2022-03-10 20:47:12,208 django.server INFO     "GET /screens/ HTTP/1.1" 200 19757
+2022-03-10 20:47:12,222 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:47:12,230 django.server INFO     "GET /static/infoscreen/img/default.jpg HTTP/1.1" 304 0
+2022-03-10 20:47:13,731 django.request WARNING  Not Found: /screen/
+2022-03-10 20:47:13,732 django.server WARNING  "GET /screen/ HTTP/1.1" 404 12805
+2022-03-10 20:47:38,092 django.server INFO     "GET /screens/ HTTP/1.1" 200 19757
+2022-03-10 20:47:38,107 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:47:40,449 django.request WARNING  Not Found: /screen/
+2022-03-10 20:47:40,449 django.server WARNING  "GET /screen/ HTTP/1.1" 404 12805
+2022-03-10 20:47:56,872 django.server INFO     "GET /screens/ HTTP/1.1" 200 19722
+2022-03-10 20:47:56,893 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:47:57,941 django.server INFO     "GET /screen/1 HTTP/1.1" 301 0
+2022-03-10 20:47:58,027 django.server INFO     "GET /screen/1/ HTTP/1.1" 200 17692
+2022-03-10 20:47:58,044 django.server INFO     "GET /static/CACHE/css/video.17410275de1d.css HTTP/1.1" 200 448
+2022-03-10 20:47:58,044 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:48:01,114 django.server INFO     "GET /screen/2 HTTP/1.1" 301 0
+2022-03-10 20:48:01,207 django.server INFO     "GET /screen/2/ HTTP/1.1" 200 17660
+2022-03-10 20:48:01,222 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:48:01,223 django.server INFO     "GET /static/CACHE/css/video.17410275de1d.css HTTP/1.1" 200 448
+2022-03-10 20:48:51,036 django.server INFO     "GET /screens/ HTTP/1.1" 200 19722
+2022-03-10 20:48:51,049 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:49:01,888 django.server INFO     "GET /screens/ HTTP/1.1" 200 19555
+2022-03-10 20:49:01,902 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:49:22,300 django.server INFO     "GET /screens/ HTTP/1.1" 200 19687
+2022-03-10 20:49:22,314 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:49:25,091 django.server INFO     "GET /screens/ HTTP/1.1" 200 19687
+2022-03-10 20:49:25,105 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:49:42,638 django.server INFO     "GET /screens/ HTTP/1.1" 200 19540
+2022-03-10 20:49:42,651 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:50:07,881 django.server INFO     "GET /screens/ HTTP/1.1" 200 19722
+2022-03-10 20:50:07,895 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:50:09,359 django.server INFO     "GET /screen/1/ HTTP/1.1" 200 17692
+2022-03-10 20:50:09,376 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:50:09,376 django.server INFO     "GET /static/CACHE/css/video.17410275de1d.css HTTP/1.1" 200 448
+2022-03-10 20:51:28,291 django.server INFO     "GET /screens/ HTTP/1.1" 200 19722
+2022-03-10 20:51:28,303 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:52:15,743 django.server INFO     "GET /screens/ HTTP/1.1" 200 19722
+2022-03-10 20:52:15,755 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:53:00,815 django.server INFO     "GET /screens/ HTTP/1.1" 200 19555
+2022-03-10 20:53:00,827 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:53:22,375 django.server INFO     "GET /screens/ HTTP/1.1" 200 19639
+2022-03-10 20:53:22,391 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:53:23,294 django.server INFO     "GET /screens/ HTTP/1.1" 200 19639
+2022-03-10 20:53:23,307 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:53:37,730 django.server INFO     "GET /screens/ HTTP/1.1" 200 19567
+2022-03-10 20:53:37,743 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:53:47,111 django.server INFO     "GET /screens/ HTTP/1.1" 200 19639
+2022-03-10 20:53:47,127 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:53:57,733 django.server INFO     "GET /screens/ HTTP/1.1" 200 19639
+2022-03-10 20:53:57,747 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:54:07,869 django.server INFO     "GET /screens/ HTTP/1.1" 200 19806
+2022-03-10 20:54:07,884 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:54:12,757 django.server INFO     "GET /screens/ HTTP/1.1" 200 19639
+2022-03-10 20:54:12,770 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:55:27,216 django.server INFO     "GET /screens/ HTTP/1.1" 200 19771
+2022-03-10 20:55:27,230 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:55:49,706 django.server INFO     "GET /screens/ HTTP/1.1" 200 19813
+2022-03-10 20:55:49,719 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:56:18,492 django.server INFO     "GET /screens/ HTTP/1.1" 200 19778
+2022-03-10 20:56:18,507 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:59:34,969 django.server INFO     "GET /admin/infoscreen/screen/ HTTP/1.1" 200 18678
+2022-03-10 20:59:35,016 django.server INFO     "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+2022-03-10 20:59:37,780 django.server INFO     "GET /screens/ HTTP/1.1" 200 19974
+2022-03-10 20:59:37,797 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 20:59:37,851 django.server INFO     "GET /static/infoscreen/img/default.jpg HTTP/1.1" 304 0
+2022-03-10 21:00:22,269 django.server INFO     "GET /screens/ HTTP/1.1" 200 20135
+2022-03-10 21:00:22,285 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 21:00:23,898 django.server INFO     "GET /screens/ HTTP/1.1" 200 20135
+2022-03-10 21:00:23,913 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 21:01:24,908 django.server INFO     "GET /screens/ HTTP/1.1" 200 20135
+2022-03-10 21:01:24,922 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-10 21:01:33,172 django.server INFO     "GET /screens/ HTTP/1.1" 200 19974
+2022-03-10 21:01:33,187 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
