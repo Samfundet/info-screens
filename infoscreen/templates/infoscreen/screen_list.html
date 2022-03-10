@@ -17,16 +17,16 @@
         <div class="row mb-3">
         {% for screen in screens %}
             {% comment %} {% screen_component screen=screen %} {% endcomment %}
-                {% if screen.images.first %}
-                <div class="col-4 themed-grid-col">
-                    <img src= "{{ screen.images.first.url }}" class="img-fluid mb-2"/>
+                <div class="col-4 themed-grid-col" >
+                    <a href="/screen/{{ screen.slug }}">
+                    <h3>{{ screen.name }}</h3>
+                    {% if screen.images.first %}
+                        <img src= "{{ screen.images.first.url }}" class="img-fluid mb-2" width="90%"/>
+                    {% else %}
+                        <img class="img-fluid mb-2" src='{% static "infoscreen/img/default.jpg" %}' width="90%"/>
+                    {% endif %}
+                    </a>
                 </div>
-                {% else %}
-                    <div class="col-4 themed-grid-col">
-                        <img class="img-fluid mb-2" src='{% static "infoscreen/img/default.jpg" %}'/>
-                    </div>
-
-                {% endif %}
         {% endfor %}
         </div>
     </div>
