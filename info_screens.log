@@ -1,0 +1,3 @@
+2022-03-10 17:52:26,189 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-03-10 17:52:36,754 django.utils.autoreload INFO     /home/sindre/Dokumenter/MG/info-screens/root/settings/base.py changed, reloading.
+2022-03-10 17:52:44,156 django.utils.autoreload INFO     Watching for file changes with StatReloader
