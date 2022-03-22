@@ -16,8 +16,7 @@
     <div class="container">
         <div class="row mb-3">
         {% for screen in screens %}
-            {% comment %} {% screen_component screen=screen %} {% endcomment %}
-                <div class="col-4 themed-grid-col" >
+                <div class="col col-sm-3">
                     <a href="/screen/{{ screen.slug }}">
                     <h3>{{ screen.name }}</h3>
                     {% if screen.images.first %}
