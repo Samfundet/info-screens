@@ -1853,3 +1853,17 @@ django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 37: 'e
 2022-03-22 18:02:24,439 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
 2022-03-22 18:02:34,778 django.request WARNING  Not Found: /favicon.ico
 2022-03-22 18:02:34,778 django.server WARNING  "GET /favicon.ico HTTP/1.1" 404 12821
+2022-03-22 18:11:09,226 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-03-22 18:11:11,987 django.server INFO     "GET /screens/ HTTP/1.1" 200 19790
+2022-03-22 18:11:12,038 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-22 18:11:13,921 django.server INFO     "GET /screen/1/ HTTP/1.1" 200 17694
+2022-03-22 18:11:13,957 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-22 18:11:13,958 django.server INFO     "GET /static/CACHE/css/video.17410275de1d.css HTTP/1.1" 200 448
+2022-03-22 18:11:21,848 django.server INFO     "GET /screen/2/ HTTP/1.1" 200 17684
+2022-03-22 18:11:21,883 django.server INFO     "GET /static/CACHE/css/video.17410275de1d.css HTTP/1.1" 200 448
+2022-03-22 18:11:21,883 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-22 18:11:24,063 django.request WARNING  Not Found: /favicon.ico
+2022-03-22 18:11:24,064 django.server WARNING  "GET /favicon.ico HTTP/1.1" 404 12821
+2022-03-22 18:18:05,836 django.server INFO     "GET /screen/1/ HTTP/1.1" 200 17694
+2022-03-22 18:18:05,878 django.server INFO     "GET /static/CACHE/css/video.17410275de1d.css HTTP/1.1" 200 448
+2022-03-22 18:18:05,878 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
