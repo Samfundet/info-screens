@@ -16,11 +16,3 @@ def screen_component(screen, *args, **kwargs):
         "screen": screen,
         "classes": kwargs.get("classes", default_classes),
     }
-
-
-@register.inclusion_tag("infoscreen/components/navbar.html")
-def navbar_component(*args, **kwargs):
-    default_classes = ""
-    return {
-        "classes": kwargs.get("classes", default_classes),
-    }
