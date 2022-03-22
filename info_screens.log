@@ -1867,3 +1867,9 @@ django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 37: 'e
 2022-03-22 18:18:05,836 django.server INFO     "GET /screen/1/ HTTP/1.1" 200 17694
 2022-03-22 18:18:05,878 django.server INFO     "GET /static/CACHE/css/video.17410275de1d.css HTTP/1.1" 200 448
 2022-03-22 18:18:05,878 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-22 18:29:44,703 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-03-22 18:30:02,588 django.server INFO     "GET /screens/ HTTP/1.1" 200 19781
+2022-03-22 18:30:02,628 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-22 18:32:35,582 django.server INFO     "GET /screen/1/ HTTP/1.1" 200 17695
+2022-03-22 18:32:35,632 django.server INFO     "GET /static/CACHE/css/base.e9ec07212d87.css HTTP/1.1" 200 727
+2022-03-22 18:32:35,633 django.server INFO     "GET /static/CACHE/css/video.17410275de1d.css HTTP/1.1" 200 448
