@@ -13,9 +13,9 @@
 {% block body %}
 <div class="body-inner">
     <div class="container">
-        <div class="row mb-3">
+        <div class="row">
         {% for screen in screens %}
-        <div class="col col-sm-3">
+        <div class="col-6 col-md-4">
             {% screen_component screen=screen %}
         </div>
         {% endfor %}
