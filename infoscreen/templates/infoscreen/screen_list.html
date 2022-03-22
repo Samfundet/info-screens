@@ -21,6 +21,8 @@
                     <h3>{{ screen.name }}</h3>
                     {% if screen.images.first %}
                         <img src= "{{ screen.images.first.url }}" class="img-fluid mb-2" width="90%"/>
+                    {% elif screen.videos.first.youtube_code %}
+                        <iframe src="//www.youtube.com/embed/{{ screen.videos.first.youtube_code }}"></iframe>
                     {% else %}
                         <img class="img-fluid mb-2" src='{% static "infoscreen/img/default.jpg" %}' width="90%"/>
                     {% endif %}
