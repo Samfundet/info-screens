@@ -18,7 +18,17 @@
 
 {% block body %}
 <div class="body-inner">
-    {% if screen.images.first %}
+    {% if screen.images.all|length > 1 %}
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            {% for image in screen.images.all %}
+                <div class="carousel-item {% if forloop.first %} active {% endif %}">
+                    <img class="d-block w-100" src="{{image.url}}" alt="Image">
+                </div>
+            {% endfor %}
+            </div>
+      </div>
+    {% elif screen.images.first %}
         <div class="vw-100 vh-100 border border-dark">
             <img class="h-100 w-100 object-fit-cover" src="{{ screen.images.first.url }}" alt="{{ screen.images.first.name }}">
         </div>
