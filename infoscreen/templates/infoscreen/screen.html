@@ -19,7 +19,7 @@
 {% block body %}
 <div class="body-inner">
     {% if screen.images.all|length > 1 %}
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             {% for image in screen.images.all %}
                 <div class="carousel-item {% if forloop.first %} active {% endif %}">
