@@ -19,6 +19,7 @@ pylint-django = "*"
 yapf = "*"
 pytest = "*"
 pytest-django = "*"
+pylint-quotes = "*"
 
 [dev-packages]
 
