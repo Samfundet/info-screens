@@ -5,6 +5,9 @@ db.sqlite3
 
 __pycache__
 
+info_screens.log
+
+
 ### VisualStudioCode ###
 .vscode/**/*
 !.vscode/extensions.json
