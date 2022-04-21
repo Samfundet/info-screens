@@ -1,6 +1,7 @@
 # imports
 from django import template
 from django.conf import settings
+
 # End: imports -----------------------------------------------------------------
 
 register = template.Library()
