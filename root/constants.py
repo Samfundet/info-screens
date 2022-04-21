@@ -1,4 +1,3 @@
-
 class Environment:
     """
     Useful in eg. templates
@@ -8,6 +7,6 @@ class Environment:
     DEV = 'development'
     HEROKU = 'heroku'
     PROD = 'production'
-    
+
     ALL = [BASE, DEV, PROD, HEROKU]
     VALID = [DEV, PROD, HEROKU]
