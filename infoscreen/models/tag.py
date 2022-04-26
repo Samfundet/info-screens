@@ -6,9 +6,7 @@ from root import models as root_models
 
 
 class Tag(root_models.CustomBaseModel):
-    name = models.CharField(
-        max_length=200, unique=True, null=False, blank=False, verbose_name='navn', help_text='En vilkårlig egenskap til en plante. (Tips: Du kan prefikse tags med kolon ":", f.eks. "familie:fiola" )'
-    )
+    name = models.CharField(max_length=200, unique=True, null=False, blank=False, verbose_name='navn')
     bg = models.ForeignKey('infoscreen.Color', on_delete=models.SET_NULL, null=True, blank=True, related_name='tag_bg', verbose_name='bakgrunnsfarge')
     font = models.ForeignKey('infoscreen.Color', on_delete=models.SET_NULL, null=True, blank=True, related_name='tag_font', verbose_name='skriftfarge')
     group = models.ForeignKey('self', on_delete=models.SET_NULL, null=True, blank=True, related_name='children', verbose_name='gruppe')
