@@ -25,9 +25,9 @@ class CustomModelForm(forms.ModelForm):
         is saved manually at a later time. Return the model instance.
         """
         # pylint: disable=invalid-string-quote
-        # pylint: disable=W0212
-        # pylint: disable=C0209
-        # pylint: disable=W0201
+        # pylint: disable=protected-access
+        # pylint: disable=consider-using-f-string
+        # pylint: disable=attribute-defined-outside-init
         if self.errors:
             raise ValueError('The %s could not be %s because the data didn\'t validate.' % (
                 self.instance._meta.object_name,
@@ -54,7 +54,7 @@ class CustomBaseAdmin(admin.ModelAdmin):
     # search_fields = []
 
     def save_model(self, request, obj, form, change):
-        # pylint: disable=W0703
+        # pylint: disable=broad-except
         try:
             if not change:
                 obj.creator = request.user
