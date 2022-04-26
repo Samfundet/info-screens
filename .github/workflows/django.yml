@@ -2,12 +2,12 @@ name: Django CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 # Prevent multiple workflows with same branch/pull_request
-concurrency: 
+concurrency:
   group: ${{ github.ref_name }}
   cancel-in-progress: true
 
@@ -20,17 +20,16 @@ env:
   DJANGO_SUPERUSER_EMAIL: admin@example.com
 
 jobs:
-
   job_build_django:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-    
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: '3.7.5' # Closest version to 3.7.3 available.
-          
+
       - name: Install dependencies
         run: |
           python -V
@@ -39,12 +38,13 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install pipenv
           python -m pipenv install --python $PY
-      
-      - name: Run pylint
-        run: python -m pipenv run pylint infoscreen root 
 
       - name: Verify migrations
         run: |
           python -m pipenv run python manage.py migrate
+
+      - name: Run pylint
+        run: python -m pipenv run pylint infoscreen root
+
       - name: Run tests
         run: python -m pipenv run pytest
