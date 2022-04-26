@@ -29,10 +29,10 @@ class Tag(root_models.CustomBaseModel):
     def color_list(self):
         """Hierarchical list of colors from least to most significant"""
         colors = []
-        if self.tag_group:
-            colors += self.tag_group.color_list()
-        if self.color:
-            colors.append(self.color)
+        if self.group:
+            colors += self.group.color_list()
+        if self.bg:
+            colors.append(self.bg)
         return colors
 
     def color_list_css(self):
