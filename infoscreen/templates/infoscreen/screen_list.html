@@ -1,5 +1,7 @@
 {% extends "infoscreen/base.html" %}
 {% load infoscreen_tags %}
+{% load static %}
+
 
 {% block title %}Screens{% endblock %}
 
@@ -10,13 +12,14 @@
 
 {% block body %}
 <div class="body-inner">
-    
-    <div class="">
+    <div class="container">
+        <div class="row">
         {% for screen in screens %}
+        <div class="col-6 col-md-4">
             {% screen_component screen=screen %}
+        </div>
         {% endfor %}
     </div>
-    
 </div>
 {% endblock %}
 
