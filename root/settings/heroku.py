@@ -8,7 +8,7 @@ ALLOWED_HOSTS = ['info-screens.herokuapp.com']
 
 # Values are set in heroku dashboard
 SECRET_KEY = os.environ['SECRET_KEY']
-DEBUG = os.environ['DEBUG'] == True
+DEBUG = os.environ['DEBUG'] == 'True'
 
 # pylint: disable=undefined-variable
 # Ensure correct ENV
