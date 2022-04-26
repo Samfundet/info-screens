@@ -7,9 +7,8 @@ class InfoScreenConfig(AppConfig):
     name = 'infoscreen'
 
     def ready(self):
-        # pylint: disable=bare-except
         try:
             # https://docs.djangoproject.com/en/3.0/ref/django-admin/#createsuperuser
             management.call_command('createsuperuser', interactive=False)
-        except:
+        except management.CommandError:
             pass
