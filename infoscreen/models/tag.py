@@ -1,10 +1,5 @@
 # imports
-import re
-
 from django.db import models
-from django.db.models import Q
-from django.core.exceptions import NON_FIELD_ERRORS, ValidationError
-
 from root import models as root_models
 
 # End: imports -----------------------------------------------------------------

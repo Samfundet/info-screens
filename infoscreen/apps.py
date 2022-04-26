@@ -1,4 +1,5 @@
 from django.apps import AppConfig
+from django.core import management
 
 
 class InfoScreenConfig(AppConfig):
@@ -6,9 +7,7 @@ class InfoScreenConfig(AppConfig):
     name = 'infoscreen'
 
     def ready(self):
-
-        from django.core import management
-
+        # pylint: disable=bare-except
         try:
             # https://docs.djangoproject.com/en/3.0/ref/django-admin/#createsuperuser
             management.call_command('createsuperuser', interactive=False)

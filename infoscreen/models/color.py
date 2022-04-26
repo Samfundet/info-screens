@@ -22,6 +22,7 @@ class Color(root_models.CustomBaseModel):
         return self.hex
 
     def as_css(self):
+        # pylint: disable=fixme
         # TODO: handle COLOR_RANDOM
         # if self.name == root_constants.COLOR_RANDOM:
         #     return

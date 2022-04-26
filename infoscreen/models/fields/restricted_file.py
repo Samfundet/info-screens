@@ -15,12 +15,13 @@ class ContentTypeRestrictedFileField(FileField):
             250MB - 214958080
             500MB - 429916160
 """
-    def __init__(self, content_types=None, max_upload_size=5242880,*args, **kwargs):
+
+    def __init__(self, content_types=None, max_upload_size=5242880, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.content_types = content_types
         self.max_upload_size = max_upload_size
 
-    def clean(self, *args, **kwargs):        
+    def clean(self, *args, **kwargs):
         data = super().clean(*args, **kwargs)
 
         file = data.file
@@ -32,6 +33,6 @@ class ContentTypeRestrictedFileField(FileField):
             else:
                 raise forms.ValidationError(_('Filetype ikke støttet.'))
         except AttributeError:
-            pass        
+            pass
 
         return data
