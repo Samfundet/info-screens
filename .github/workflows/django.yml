@@ -40,6 +40,12 @@ jobs:
           python -m pip install pipenv
           python -m pipenv install --python $PY
 
+      - name: Run pylint
+        run: python -m pipenv run pylint infoscreen root
+
+      - name: Verify migrations
+        run: |
+          python -m pipenv run python manage.py migrate
 
       - name: Run tests
         run: python -m pipenv run pytest
