@@ -27,6 +27,10 @@ disable=
 
 [VARIABLES]
 
+[pylint-django]
+django-settings-module=root.settings
+
+
 [pylint-quotes]
 string-quote=single-avoid-escape
 triple-quote=double
