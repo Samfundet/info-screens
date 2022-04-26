@@ -1,4 +1,7 @@
 from django.db.models import FileField
+from django import forms
+from django.template.defaultfilters import filesizeformat
+from django.utils.translation import gettext_lazy as _
 
 
 class ContentTypeRestrictedFileField(FileField):
@@ -15,14 +18,16 @@ class ContentTypeRestrictedFileField(FileField):
             250MB - 214958080
             500MB - 429916160
 """
-    def __init__(self, content_types=None, max_upload_size=5242880,*args, **kwargs):
+
+    def __init__(self, *args, content_types=None, max_upload_size=5242880, **kwargs):
         super().__init__(*args, **kwargs)
         self.content_types = content_types
         self.max_upload_size = max_upload_size
 
-    def clean(self, *args, **kwargs):        
+    def clean(self, *args, **kwargs):
         data = super().clean(*args, **kwargs)
 
+        # pylint: disable=protected-access
         file = data.file
         try:
             content_type = file.content_type
@@ -32,6 +37,6 @@ class ContentTypeRestrictedFileField(FileField):
             else:
                 raise forms.ValidationError(_('Filetype ikke støttet.'))
         except AttributeError:
-            pass        
+            pass
 
         return data

@@ -141,7 +141,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ################## LOGGING ##################
 
-LOGFILENAME = f"{BASE_DIR}/info_screens.log"
+LOGFILENAME = f'{BASE_DIR}/info_screens.log'
 
 LOGGING = {
     'version': 1,

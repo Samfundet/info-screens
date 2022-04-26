@@ -1,31 +1,32 @@
+import re
+from django.core.exceptions import ValidationError
 from django.db import models
-
 from root import models as root_models
 
 
 class Color(root_models.CustomBaseModel):
     name = models.CharField(max_length=200, null=True, blank=True, verbose_name='navn')
-    hex = models.CharField(max_length=6, null=True, blank=True, verbose_name="hex", help_text="Fargekode i hex (6 symboler)")
+    hex = models.CharField(max_length=6, null=True, blank=True, verbose_name='hex', help_text='Fargekode i hex (6 symboler)')
 
     class Meta:
         ordering = []
         verbose_name = 'farge'
         verbose_name_plural = 'farger'
-        
+
     def __str__(self):
-        return f"{self.get_name()}"
-    
+        return f'{self.get_name()}'
+
     def get_name(self):
         if self.name:
             return self.name
         return self.hex
-    
+
     def as_css(self):
         # TODO: handle COLOR_RANDOM
         # if self.name == root_constants.COLOR_RANDOM:
-        #     return 
-        return f"#{self.hex}"
-    
+        #     return
+        return f'#{self.hex}'
+
     def clean(self, *args, **kwargs):
         super().clean(*args, **kwargs)
         errors = {}
@@ -34,8 +35,7 @@ class Color(root_models.CustomBaseModel):
                 errors['hex'] = 'Ugyldig format. Bruk 0-9 og A-F'
         if errors:
             raise ValidationError(errors)
-    
+
     def save(self, *args, **kwargs):
         self.clean()
         super().save(*args, **kwargs)
-    

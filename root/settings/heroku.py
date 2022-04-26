@@ -1,14 +1,16 @@
-from .base import *
+# pylint: disable=wildcard-import
+# pylint: disable=unused-wildcard-import
 import os
 import django_heroku
-
+from .base import *
 
 ALLOWED_HOSTS = ['info-screens.herokuapp.com']
 
 # Values are set in heroku dashboard
 SECRET_KEY = os.environ['SECRET_KEY']
-DEBUG = eval(os.environ['DEBUG'])
+DEBUG = os.environ['DEBUG'] == 'True'
 
+# pylint: disable=undefined-variable
 # Ensure correct ENV
 ENV = Environment.HEROKU
 
@@ -16,7 +18,7 @@ ENV = Environment.HEROKU
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MIDDLEWARE += [
-    'whitenoise.middleware.WhiteNoiseMiddleware', # whitenoise, heroku
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # whitenoise, heroku
 ]
 
 # activate django-heroku.
