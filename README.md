@@ -51,3 +51,9 @@ python3 -m pipenv run python manage.py cleanstart
 ```sh
 python3 -m pipenv run python manage.py collectstatic
 ```
+
+## Deployment
+The project exist at:
+```sh
+/home/cassarossa/lim/web-intern/projects/info-screens
+```
