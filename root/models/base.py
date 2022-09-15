@@ -7,8 +7,8 @@ from django.conf import settings
 from django.utils import timezone
 from django.contrib import admin
 from django.contrib.auth import models as auth_models
-from django.utils.translation import ugettext_lazy as _
 from django.template.defaultfilters import filesizeformat
+
 # End: imports -----------------------------------------------------------------
 
 
@@ -26,15 +26,13 @@ class CustomModelForm(forms.ModelForm):
         is saved manually at a later time. Return the model instance.
         """
         if self.errors:
-            raise ValueError(
-                "The %s could not be %s because the data didn't validate." % (
-                    self.instance._meta.object_name,
-                    'created' if self.instance._state.adding else 'changed',
-                )
-            )
+            raise ValueError("The %s could not be %s because the data didn't validate." % (
+                self.instance._meta.object_name,
+                'created' if self.instance._state.adding else 'changed',
+            ))
         if commit:
             # If committing, save the instance and the m2m data immediately.
-            self.instance.save(*args, **kwargs) # <--- This is the only difference
+            self.instance.save(*args, **kwargs)  # <--- This is the only difference
             self._save_m2m()
         else:
             # If not committing, add a method to the form to allow deferred
@@ -45,6 +43,7 @@ class CustomModelForm(forms.ModelForm):
 
 class CustomBaseAdmin(admin.ModelAdmin):
     readonly_fields = ['creator', 'created', 'last_edited', 'last_editor']
+
     # list_display = []
     # ordering = []
     # list_filter = []
@@ -75,15 +74,15 @@ class CustomBaseModel(models.Model):
 
     def is_edited(self):
         return (self.created != self.last_edited)
-    
+
     def clean(self, *args, **kwargs):
         pass
 
     def save(self, *args, **kwargs):
         self.clean()
-        user = kwargs.pop('user', None) # Must pop because super().save() doesn't accept user
-        if isinstance(user, auth_models.AnonymousUser): 
-            user = None # creator and last_editor can't be AnonymousUser
+        user = kwargs.pop('user', None)  # Must pop because super().save() doesn't accept user
+        if isinstance(user, auth_models.AnonymousUser):
+            user = None  # creator and last_editor can't be AnonymousUser
         if not self.id:
             self.created = timezone.now()
             if user:
@@ -93,5 +92,3 @@ class CustomBaseModel(models.Model):
             self.last_editor = user
 
         super().save(*args, **kwargs)
-
-
