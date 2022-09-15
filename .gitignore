@@ -10,6 +10,7 @@ staticroot
 __pycache__
 
 info_screens.log
+info_screens.log.swp
 
 ### VisualStudioCode ###
 .vscode/**/*
