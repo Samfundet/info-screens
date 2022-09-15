@@ -13,7 +13,6 @@ attr-rgx=(([a-z_]+[a-z0-9_]*)|(_[a-z0-9_]*)|(__[a-z][a-z0-9_]+__))$
 
 disable=
     missing-module-docstring, missing-class-docstring, missing-function-docstring, # We don't require docstrings
-    bad-continuation, # Not compatible with yapf settings
     duplicate-code,
     too-many-ancestors,
     too-many-instance-attributes,
