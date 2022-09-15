@@ -3,6 +3,10 @@
 
 db.sqlite3
 
+staticroot
+*.log
+.history
+
 __pycache__
 
 info_screens.log
