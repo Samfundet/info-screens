@@ -29,7 +29,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.7.5' # Closest version to 3.7.3 available.
+          python-version: '3.9.2' # Closest version to 3.7.3 available.
 
       - name: Install dependencies
         run: |
