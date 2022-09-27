@@ -45,5 +45,5 @@ jobs:
           python -m pipenv run python manage.py makemigrations
           python -m pipenv run python manage.py migrate
 
-      # - name: Run pylint
-      #   run: python -m pipenv run pylint infoscreen root
+      - name: Run pylint
+        run: python -m pipenv run pylint ./run-pylint.sh
