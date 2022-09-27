@@ -6,6 +6,10 @@ from django.conf import settings
 from django.utils import timezone
 from django.contrib import admin
 from django.contrib.auth import models as auth_models
+<<<<<<< HEAD
+=======
+from django.template.defaultfilters import filesizeformat
+>>>>>>> 035aec60c9b1249ca1761f39c5fdafbc26602740
 
 # End: imports -----------------------------------------------------------------
 
@@ -29,7 +33,11 @@ class CustomModelForm(forms.ModelForm):
         # pylint: disable=consider-using-f-string
         # pylint: disable=attribute-defined-outside-init
         if self.errors:
+<<<<<<< HEAD
             raise ValueError('The %s could not be %s because the data didn\'t validate.' % (
+=======
+            raise ValueError("The %s could not be %s because the data didn't validate." % (
+>>>>>>> 035aec60c9b1249ca1761f39c5fdafbc26602740
                 self.instance._meta.object_name,
                 'created' if self.instance._state.adding else 'changed',
             ))
@@ -77,7 +85,11 @@ class CustomBaseModel(models.Model):
         abstract = True
 
     def is_edited(self):
+<<<<<<< HEAD
         return self.created != self.last_edited
+=======
+        return (self.created != self.last_edited)
+>>>>>>> 035aec60c9b1249ca1761f39c5fdafbc26602740
 
     def clean(self, *args, **kwargs):
         pass
