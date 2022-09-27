@@ -1,0 +1,49 @@
+name: Django CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Prevent multiple workflows with same branch/pull_request
+concurrency:
+  group: ${{ github.ref_name }}
+  cancel-in-progress: true
+
+env:
+  PIPENV_VENV_IN_PROJECT: 1
+  ENV: development
+  SECRET_KEY: NOT SET
+  DJANGO_SUPERUSER_USERNAME: admin
+  DJANGO_SUPERUSER_PASSWORD: Django123
+  DJANGO_SUPERUSER_EMAIL: admin@example.com
+  DJANGO_SETTINGS_MODULE: root.settings
+
+jobs:
+  job_build_django:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9.2' # Closest version to 3.7.3 available.
+
+      - name: Install dependencies
+        run: |
+          python -V
+          PY=$(which python)
+          echo $PY
+          python -m pip install --upgrade pip
+          python -m pip install pipenv
+          python -m pipenv install --python $PY
+
+      - name: Verify migrations
+        run: |
+          python -m pipenv run python manage.py makemigrations
+          python -m pipenv run python manage.py migrate
+
+      - name: Run pylint
+        run: python -m pipenv run pylint ./run-pylint.sh

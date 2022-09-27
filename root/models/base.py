@@ -1,5 +1,4 @@
 # imports
-from datetime import time, date, datetime, timedelta
 
 from django import forms
 from django.db import models
@@ -15,6 +14,7 @@ from django.template.defaultfilters import filesizeformat
 # https://github.com/django/django/blob/master/django/forms/models.py
 class CustomModelForm(forms.ModelForm):
 
+    # pylint: disable=keyword-arg-before-vararg
     def save(self, commit=True, *args, **kwargs):
         """
         Override django ModelForm.save() to implement kwargs. Do not use super() in this class!
@@ -25,6 +25,10 @@ class CustomModelForm(forms.ModelForm):
         a save_m2m() method to the form which can be called after the instance
         is saved manually at a later time. Return the model instance.
         """
+        # pylint: disable=invalid-string-quote
+        # pylint: disable=protected-access
+        # pylint: disable=consider-using-f-string
+        # pylint: disable=attribute-defined-outside-init
         if self.errors:
             raise ValueError("The %s could not be %s because the data didn't validate." % (
                 self.instance._meta.object_name,
@@ -51,23 +55,24 @@ class CustomBaseAdmin(admin.ModelAdmin):
     # search_fields = []
 
     def save_model(self, request, obj, form, change):
+        # pylint: disable=broad-except
         try:
             if not change:
                 obj.creator = request.user
                 obj.created = timezone.now()
             obj.last_editor = request.user
             obj.last_edited = timezone.now()
-        except Exception as e:
+        except Exception:
             pass
 
         return super().save_model(request, obj, form, change)
 
 
 class CustomBaseModel(models.Model):
-    last_editor = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, editable=False, related_name="editor_%(class)s_set", verbose_name="Sist redigert av")
-    last_edited = models.DateTimeField(null=True, blank=True, editable=False, verbose_name="Sist redigert")
-    creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, editable=False, related_name="creator_%(class)s_set", verbose_name="Opprettet av")
-    created = models.DateTimeField(null=True, blank=True, editable=False, verbose_name="Opprettet")
+    last_editor = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, editable=False, related_name='editor_%(class)s_set', verbose_name='Sist redigert av')
+    last_edited = models.DateTimeField(null=True, blank=True, editable=False, verbose_name='Sist redigert')
+    creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, editable=False, related_name='creator_%(class)s_set', verbose_name='Opprettet av')
+    created = models.DateTimeField(null=True, blank=True, editable=False, verbose_name='Opprettet')
 
     class Meta:
         abstract = True

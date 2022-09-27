@@ -9,6 +9,10 @@ argument-rgx=(([a-z_]+[a-z0-9_]*)|(_[a-z0-9_]*)|(__[a-z][a-z0-9_]+__))$
 method-rgx=(([a-z_]+[a-z0-9_]*)|(_[a-z0-9_]*)|(__[a-z][a-z0-9_]+__))$
 attr-rgx=(([a-z_]+[a-z0-9_]*)|(_[a-z0-9_]*)|(__[a-z][a-z0-9_]+__))$
 
+[pylint-django]
+django-settings-module=root.settings
+
+
 [MESSAGES CONTROL]
 
 disable=
@@ -22,6 +26,8 @@ disable=
     too-many-locals,
     too-many-statements,
     unsubscriptable-object, # https://github.com/PyCQA/pylint/issues/1498
+    fixme,
+    ; django-not-configured, # django-settings-module=root.settings doesn't work
 
 [VARIABLES]
 

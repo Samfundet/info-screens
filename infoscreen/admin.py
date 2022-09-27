@@ -8,10 +8,10 @@ class ScreenAdmin(root_models.CustomBaseAdmin):
     list_display = ['name']
     ordering = []
     list_filter = ['images', 'videos']
-    filter_horizontal = ['images','videos']
+    filter_horizontal = ['images', 'videos']
     search_fields = ['name', 'slug']
-    
-    
+
+
 class ScreenHasImageAdmin(admin.ModelAdmin):
     list_display = ['screen', 'image', 'nr']
     ordering = ['screen', 'nr']
@@ -34,7 +34,6 @@ class VideoAdmin(root_models.CustomBaseAdmin):
     # list_filter = []
     # filter_horizontal = []
     search_fields = ['name']
-
 
 
 admin.site.register(infoscreen_models.Screen, ScreenAdmin)

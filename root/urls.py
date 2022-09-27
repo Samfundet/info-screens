@@ -20,15 +20,12 @@ from django.urls import path, include
 from django.contrib import admin
 from django.conf.urls.static import static
 
-from infoscreen import views as infoscreen_views
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('infoscreen.urls'))
+    path('', include('infoscreen.urls')),
 ]
 
 urlpatterns += static(prefix=settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
 
 if settings.DEBUG:
     urlpatterns += [

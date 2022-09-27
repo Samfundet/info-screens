@@ -1,4 +1,5 @@
 from django.apps import AppConfig
+from django.core import management
 
 
 class InfoScreenConfig(AppConfig):
