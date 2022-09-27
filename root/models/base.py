@@ -6,10 +6,7 @@ from django.conf import settings
 from django.utils import timezone
 from django.contrib import admin
 from django.contrib.auth import models as auth_models
-<<<<<<< HEAD
-=======
 from django.template.defaultfilters import filesizeformat
->>>>>>> 035aec60c9b1249ca1761f39c5fdafbc26602740
 
 # End: imports -----------------------------------------------------------------
 
