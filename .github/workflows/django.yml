@@ -47,6 +47,3 @@ jobs:
 
       # - name: Run pylint
       #   run: python -m pipenv run pylint infoscreen root
-
-      - name: Run tests
-        run: python -m pipenv run pytest
