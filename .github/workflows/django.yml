@@ -42,7 +42,7 @@ jobs:
 
       - name: Verify migrations
         run: |
-          python -m pipenv run python manage.py makemigrations --check --dry-runs
+          python -m pipenv run python manage.py makemigrations
           python -m pipenv run python manage.py migrate
 
       - name: Run pylint
