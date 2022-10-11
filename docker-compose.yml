@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  # docker syntax
+
+  # Custom name for our service (container to build)
+  project:
+    build: .
+    volumes:
+      - ./infoscreen:app/infoscreen # Share project code between host machine and container to enable reload on changes.
+      - ./root:app/root # Share project code between host machine and container to enable reload on changes.
+    env_file:
+      - ./.env
+    ports:
+      - "8000:8000" # Quotes are required.
